@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	
 	//socket() for server socket
 	//int socketID=socket(Family,Type,Protocol)
-	int serverSocketID=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+	int serverSocketID=socket(AF_INET,SOCK_DGRAM,0);
 	if(serverSocketID<0)
 	{
 		cerr<<"Missing serverSocketID\n";
@@ -64,25 +64,19 @@ int main(int argc, char *argv[])
 			cout<<"Session Terminated";
 			break;
 		}
-		cout<<msg<<endl;
-		string data;
-		cin>>data;
-		memset(msg,'\0',sizeof(msg));
-		strcpy(msg,data.c_str());
-		if(data=="exit")
-		{
-			cout<<"Session Terminated";
-			break;
-		}
+		cout<<"Client: "<<msg<<endl;
 		
-		int s_len=recvfrom(serverSocketID,msg,sizeof(msg),0,(struct sockaddr*)&client_Socket,&clientSocketLen);
-		if(s_len<0)
-		{
-			cerr<<"Error in sending\n";
-			break;	
-		}
 	}
 
 	close(serverSocketID);
 	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
