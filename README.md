@@ -47,14 +47,3 @@ TCP does Flow Control and requires three packets to set up a socket connection, 
 
 ### Additions to Project
 - Added Client-Server-Communication using UDP
-- Now we can send messages with spaces also
-
-
-### Working Preview
-
-***TCP***
-![TCP](https://user-images.githubusercontent.com/60233336/108828956-8c829880-75ed-11eb-993c-c6f9e73bdede.gif)
-
-
-***UDP***
-![UDP](https://user-images.githubusercontent.com/60233336/108828959-8db3c580-75ed-11eb-9f77-e5752e4f0037.gif)
