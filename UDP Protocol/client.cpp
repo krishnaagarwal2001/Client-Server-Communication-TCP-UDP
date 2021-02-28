@@ -11,14 +11,13 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	if(argc!=3)
+	if(argc!=2)
 	{
-		cerr<<"Missing hostname and port number\n";
+		cerr<<"Missing port number\n";
 		exit(0);
 	}
 	
-	char *serverName=argv[1];
-	int port=atoi(argv[2]);
+	int port=atoi(argv[1]);
 	
 	char msg[2000];
 	
@@ -26,7 +25,7 @@ int main(int argc, char *argv[])
 	sockaddr_in clientSocket;
 	clientSocket.sin_family=AF_INET;
 	clientSocket.sin_port=htons(port);
-	clientSocket.sin_addr.s_addr=INADDR_ANY;
+	inet_pton(AF_INET,"127.0.0.1",&clientSocket.sin_addr);
 	
 	
 	//socket() call to get file descriptor
@@ -39,28 +38,34 @@ int main(int argc, char *argv[])
 		exit(0);
 	}
 	
-	
 	//start sending and receiving messages
 	while(1)
 	{
 		string data;
 		cout<<"Client: ";
-		cin>>data;
+		getline(cin,data);
 		strcpy(msg,data.c_str());
 		if(data=="exit")
 		{
 			cout<<"Connection terminated";
 			break;
 		}
-		send(clientSocketID,msg,sizeof(msg),0);
-		cout<<"Server: ";
-		recv(clientSocketID,msg,sizeof(msg),0);
-		if(!strcmp(msg,"exit"))
+		int check=sendto(clientSocketID,msg,sizeof(msg),0,(sockaddr*)&clientSocket,sizeof(clientSocket));
+		if(check<0)
 		{
-			cout<<"Connection terminated";
-			break;
+			cerr<<"Error in sending\n";
+			exit(0);
 		}
-		cout<<msg<<endl;
+		
 	}
 	close(clientSocketID);
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
