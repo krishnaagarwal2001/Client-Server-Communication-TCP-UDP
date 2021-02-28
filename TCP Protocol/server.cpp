@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		exit(0);
 	}
 	int port=atoi(argv[1]);
-	string msg;
+	char msg[2000];
 	
 	//define a sockeraddr_in struct for server socket
 	sockaddr_in serverSocket;
@@ -76,12 +76,13 @@ int main(int argc, char *argv[])
 		recv(newSocketID,(char *)&msg,sizeof(msg),0);
 		if(!strcmp(msg,"exit"))
 		{
-			cout<<"Session Terminated";
+			cout<<"Session Terminated\n";
 			break;
 		}
-		cout<<msg<<endl;
+		cout<<"Client: "<<msg<<endl;
 		string data;
-		cin>>data;
+		cout<<"Server: ";
+		getline(cin,data);
 		strcpy(msg,data.c_str());
 		if(data=="exit")
 		{
@@ -94,3 +95,10 @@ int main(int argc, char *argv[])
 	close(serverSocketID);
 	
 }
+	
+	
+	
+	
+	
+	
+	
