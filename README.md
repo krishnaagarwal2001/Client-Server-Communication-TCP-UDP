@@ -47,3 +47,7 @@ TCP does Flow Control and requires three packets to set up a socket connection, 
 
 ### Additions to Project
 - Added Client-Server-Communication using UDP
+
+### Working Preview
+
+***TCP***
