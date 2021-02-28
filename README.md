@@ -6,7 +6,7 @@
 **Socket:** A socket is a programming interface and communication endpoint that is used for connecting to other computers, sending, and receiving data from them.
 
 ### How to Run
-First clone this repo to your local machine using `git clone https://github.com/saurabhhere/Client-Server-Communication-TCP-UDP.git`
+First clone this repo to your local machine using `git clone https://github.com/krishnaagarwal2001/Client-Server_Communication-TCP-UDP.git`
 
 **For TCP**:
 Go the corresponding folder
