@@ -51,3 +51,7 @@ TCP does Flow Control and requires three packets to set up a socket connection, 
 ### Working Preview
 
 ***TCP***
+![TCP](https://user-images.githubusercontent.com/63241474/109414703-41e09200-79da-11eb-9c31-a3ce8dbc9cba.png)
+
+***UDP***
+
