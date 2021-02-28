@@ -12,7 +12,7 @@ First clone this repo to your local machine using `git clone https://github.com/
 Go the corresponding folder
 ```
 cd Client-Server-Communication-TCP-UDP
-cd UsingTCP
+cd TCP Protocol
 ```
 Compile and Run `server.cpp` and `client.cpp` using:
 ```
@@ -28,7 +28,7 @@ g++ -o client client.cpp
 Go the corresponding folder
 ```
 cd Client-Server-Communication-TCP-UDP
-cd UsingUDP
+cd UDP Protocol
 ```
 Compile and Run `server.cpp` and `client.cpp` using:
 ```
