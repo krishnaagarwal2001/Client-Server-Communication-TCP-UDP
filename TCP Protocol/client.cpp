@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	char *serverName=argv[1];
 	int port=atoi(argv[2]);
 	
-	string msg;
+	char msg[2000];
 	
 	//declare clientSocket and retrieve details fo host
 	struct hostent* host=gethostbyname(serverName);
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	{
 		string data;
 		cout<<"Client: ";
-		cin>>data;
+		getline(cin,data);
 		strcpy(msg,data.c_str());
 		if(data=="exit")
 		{
@@ -67,3 +67,12 @@ int main(int argc, char *argv[])
 	}
 	close(clientSocketID);
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
